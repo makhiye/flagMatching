@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="flag_Matching" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wFk-Ys-82I">
+                                <rect key="frame" x="65" y="60" width="245" height="230"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6XQ-rq-XXc">
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-r3-igK" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="IJg-L1-hng"/>
+                                                    <constraint firstAttribute="width" secondItem="qxm-r3-igK" secondAttribute="height" multiplier="3:2" id="JSe-cS-7Xl"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cY8-3d-341"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whf-kl-h4I" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="85" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="whf-kl-h4I" secondAttribute="height" multiplier="3:2" id="Qvo-IR-TGF"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTo-jI-cf6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyZ-Hd-JOO" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SyZ-Hd-JOO" secondAttribute="height" multiplier="3:2" id="0EP-dS-iNX"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bhz-6d-mSw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="SyZ-Hd-JOO" firstAttribute="width" secondItem="SyZ-Hd-JOO" secondAttribute="height" multiplier="3:2" id="NH1-mm-erx"/>
+                                            <constraint firstItem="qxm-r3-igK" firstAttribute="width" secondItem="qxm-r3-igK" secondAttribute="height" multiplier="3:2" id="S7m-0M-a7N"/>
+                                            <constraint firstItem="SyZ-Hd-JOO" firstAttribute="width" secondItem="SyZ-Hd-JOO" secondAttribute="height" multiplier="3:2" id="cVJ-vH-Jc5"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2M8-L1-rrY">
+                                        <rect key="frame" x="0.0" y="60" width="245" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZc-eE-fir" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Ecq-Co-MOl"/>
+                                                    <constraint firstAttribute="width" secondItem="ZZc-eE-fir" secondAttribute="height" multiplier="3:2" id="KFU-fY-60c"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jd-YF-51Y"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inN-00-hlD" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="85" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="inN-00-hlD" secondAttribute="height" multiplier="3:2" id="UGd-ra-1CM"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BKb-Gk-xvf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-Q2-2yY" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qU4-Q2-2yY" secondAttribute="height" multiplier="3:2" id="9ZL-oi-988"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uuk-uP-eYq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="qU4-Q2-2yY" firstAttribute="width" secondItem="qU4-Q2-2yY" secondAttribute="height" multiplier="3:2" id="UlO-Qs-kzO"/>
+                                            <constraint firstItem="qU4-Q2-2yY" firstAttribute="width" secondItem="qU4-Q2-2yY" secondAttribute="height" multiplier="3:2" id="iHB-2c-PvV"/>
+                                            <constraint firstItem="ZZc-eE-fir" firstAttribute="width" secondItem="ZZc-eE-fir" secondAttribute="height" multiplier="3:2" id="sU5-oV-tTP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9yb-ZP-U6b">
+                                        <rect key="frame" x="0.0" y="120" width="245" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcK-jD-3Nj" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="GGt-EA-tg5"/>
+                                                    <constraint firstAttribute="width" secondItem="OcK-jD-3Nj" secondAttribute="height" multiplier="3:2" id="sGt-Gw-Z9r"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mLo-cW-iLr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1A-X2-rU4" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="85" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="P1A-X2-rU4" secondAttribute="height" multiplier="3:2" id="Pkf-l7-7qL"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYg-Ln-3Oc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIt-q1-EE0" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="nIt-q1-EE0" secondAttribute="height" multiplier="3:2" id="fvu-82-V9h"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EV5-sF-43X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nIt-q1-EE0" firstAttribute="width" secondItem="nIt-q1-EE0" secondAttribute="height" multiplier="3:2" id="6Oj-Ky-Gvg"/>
+                                            <constraint firstItem="nIt-q1-EE0" firstAttribute="width" secondItem="nIt-q1-EE0" secondAttribute="height" multiplier="3:2" id="gzB-bp-QA1"/>
+                                            <constraint firstItem="OcK-jD-3Nj" firstAttribute="width" secondItem="OcK-jD-3Nj" secondAttribute="height" multiplier="3:2" id="vna-bn-RCe"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-x6-wcl">
+                                        <rect key="frame" x="0.0" y="180" width="245" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFr-7S-utT" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="CFr-7S-utT" secondAttribute="height" multiplier="3:2" id="Zy1-Im-Re6"/>
+                                                    <constraint firstAttribute="height" constant="50" id="d4F-P6-QX8"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5tf-Ok-3yd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-Lo-juK" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="85" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="O0d-Lo-juK" secondAttribute="height" multiplier="3:2" id="17J-vW-53X"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpZ-cF-CPC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lM-kM-BRX" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="75" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6lM-kM-BRX" secondAttribute="height" multiplier="3:2" id="79P-H6-htm"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Angola"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdW-FR-ISQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6lM-kM-BRX" firstAttribute="width" secondItem="6lM-kM-BRX" secondAttribute="height" multiplier="3:2" id="9j3-Xw-NbN"/>
+                                            <constraint firstItem="CFr-7S-utT" firstAttribute="width" secondItem="CFr-7S-utT" secondAttribute="height" multiplier="3:2" id="B2K-Kz-j7r"/>
+                                            <constraint firstItem="6lM-kM-BRX" firstAttribute="width" secondItem="6lM-kM-BRX" secondAttribute="height" multiplier="3:2" id="f49-cz-K82"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vw-Of-asC" customClass="roundedButtons" customModule="flag_Matching" customModuleProvider="target">
+                                <rect key="frame" x="164" y="396" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D5T-jm-Gqc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wFk-Ys-82I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="fyu-hP-uvZ"/>
+                            <constraint firstItem="wFk-Ys-82I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iCr-PI-q5d"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="32.833583208395808"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Angola" width="450" height="300"/>
+    </resources>
+</document>
