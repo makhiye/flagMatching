@@ -21,12 +21,26 @@ struct Game {
     var deckOfCards = DeckOfCards()
     let synthesizer = AVSpeechSynthesizer()
     var gameDelegate: MatchingGameDelegate?
-    var unmatchedCardsRevealed: [Int] = []
+    var unmatchedCardsRevealed: [Int] = [] // card index numbers that have been revealed
+    
     
     mutating func flipCard(atIndexNumber index: Int) -> Bool {
         
         if unmatchedCardsRevealed.count < 2 {
             unmatchedCardsRevealed.append(index)
+            if unmatchedCardsRevealed.count == 2 {
+                let card1Name = deckOfCards.dealtCards[unmatchedCardsRevealed[0]]
+                let card2Name = deckOfCards.dealtCards[unmatchedCardsRevealed[1]]
+                
+                if card1Name == card2Name{
+                    
+                    print("Its a match")
+                    
+                }
+                
+                
+                
+            }
             
             return true
         }else{
