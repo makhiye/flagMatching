@@ -22,33 +22,46 @@ struct Game {
     let synthesizer = AVSpeechSynthesizer()
     var gameDelegate: MatchingGameDelegate?
     var unmatchedCardsRevealed: [Int] = [] // card index numbers that have been revealed
-    
     var sound = AVAudioPlayer() // add sound player
+    var waitingForHidingCards = false //When start game we not waiting
     
     
     mutating func flipCard(atIndexNumber index: Int) -> Bool {
         
+        if waitingForHidingCards {return false}
+        
+        if !unmatchedCardsRevealed.isEmpty && unmatchedCardsRevealed[0] == index {return false} //this is not the first tap ()its the second
+        
+       
+        
         if unmatchedCardsRevealed.count < 2 {
             unmatchedCardsRevealed.append(index)
+            
             if unmatchedCardsRevealed.count == 2 {
                 let card1Name = deckOfCards.dealtCards[unmatchedCardsRevealed[0]]
                 let card2Name = deckOfCards.dealtCards[unmatchedCardsRevealed[1]]
                 
-                if card1Name == card2Name{
+                if card1Name == card2Name{ // second card is a match
                     
                     speakCard(number: index)
+                    unmatchedCardsRevealed.removeAll()
 
+                    
+                }else {                  // second card is NOT a match
+                    
+                    
+                    resetUnmatchedcards()
                     
                 }
                 
-                
+                playFlipSound()
                 
             }
             
             return true
         }else{
             
-            resetUnmatchedcards()
+            print("ERROR: This should be here")
             return false
             
         }
@@ -91,6 +104,8 @@ struct Game {
     
     
     mutating func resetUnmatchedcards() {
+        
+        waitingForHidingCards = true // Tobe  reset in the hideCards methods
         
         self.gameDelegate?.game(self, hideCards: unmatchedCardsRevealed)
         unmatchedCardsRevealed.removeAll()

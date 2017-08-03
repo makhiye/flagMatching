@@ -52,7 +52,7 @@ class GameViewController: UIViewController, MatchingGameDelegate {
             if let thisButton = self.view.viewWithTag(tagNum) as? UIButton{
                 
                 UIView.transition(with: thisButton, duration: 0.5, options: .transitionCurlDown, animations: {
-                    sender.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
+                    thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
                 }, completion: nil)
                 
                 
@@ -71,15 +71,25 @@ class GameViewController: UIViewController, MatchingGameDelegate {
     
     func game(_ game: Game, hideCards cards: [Int]) {
         
-        for cardIndex in cards {
+        let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime){
             
-            if let thisButton = self.view.viewWithTag(cardIndex+1) as? UIButton{
+            
+            for cardIndex in cards {
                 
-                thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
-                
+                if let thisButton = self.view.viewWithTag(cardIndex+1) as? UIButton{
+                    
+                    UIView.transition(with: thisButton, duration: 0.5, options: .transitionCurlDown, animations: {
+                        thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
+                    }, completion: nil)
+
+                    
+                }
             }
+            
+            self.game.waitingForHidingCards = false // All unmatched are hidden
         }
-        
+
     }
     
     
