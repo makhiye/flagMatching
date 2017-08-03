@@ -23,8 +23,6 @@ struct Game {
     var gameDelegate: MatchingGameDelegate?
     var unmatchedCardsRevealed: [Int] = [] // card index numbers that have been revealed
     
-    var sound = AVAudioPlayer() // add sound player
-    
     
     mutating func flipCard(atIndexNumber index: Int) -> Bool {
         
@@ -36,8 +34,7 @@ struct Game {
                 
                 if card1Name == card2Name{
                     
-                    speakCard(number: index)
-
+                    self.speakCard(number: index)
                     
                 }
                 
@@ -52,43 +49,10 @@ struct Game {
             return false
             
         }
-    }
-    
-    mutating func newGame(){
         
-        playFlipSound()
         
-        deckOfCards.drawCards()
         
     }
-    
-    mutating func playFlipSound() {
-        
-        let path = Bundle.main.path(forResource: "card-flip", ofType: "mp3")
-        playSound(withPath: path!)
-    }
-    mutating func playShuffleSound() {
-        let path = Bundle.main.path(forResource: "shuffle", ofType: "wav")
-        playSound(withPath: path!)
-    }
-    
-    //Plays any sound that you pass a path to
-    mutating func playSound(withPath path: String) {
-        
-        
-        let soundURL = URL(fileURLWithPath: path)
-        do {
-            try sound = AVAudioPlayer(contentsOf: soundURL)
-            sound.prepareToPlay()
-            
-        } catch {
-            
-            print("ERROR! Couldn’t load sound file")
-        }
-        
-        sound.play()
-    }
-    
     
     mutating func resetUnmatchedcards() {
         

@@ -10,7 +10,6 @@ import UIKit
 import LTMorphingLabel
 
 
-
 class GameViewController: UIViewController, MatchingGameDelegate {
     
     var game = Game()
@@ -22,23 +21,21 @@ class GameViewController: UIViewController, MatchingGameDelegate {
     
     
     @IBOutlet weak var cardButton: UIButton!
-    
+   
     var counter = 0
     
     @IBAction func cardTapped(_ sender: UIButton) {
         
-        let tagNum = sender.tag
+      let tagNum = sender.tag
         if game.flipCard(atIndexNumber: tagNum-1){
             let thisImage = UIImage(named: game.deckOfCards.dealtCards[tagNum - 1])
             
-            UIView.transition(with: sender, duration: 0.5, options: .transitionCurlDown, animations: {sender.setImage(thisImage, for: .normal)}, completion: nil)
+            UIView.transition(with: sender, duration: 0.5, options: . transitionCurlDown, animations: {sender.setImage(thisImage, for: .normal)}, completion: nil)
             
-            
-            
-            
-        }
-        
+       
     }
+    
+}
     
     
     
@@ -51,20 +48,16 @@ class GameViewController: UIViewController, MatchingGameDelegate {
             
             if let thisButton = self.view.viewWithTag(tagNum) as? UIButton{
                 
-                UIView.transition(with: thisButton, duration: 0.5, options: .transitionCurlDown, animations: {
-                    sender.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
-                }, completion: nil)
-                
+                thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
                 
             }
             
         }
         
-        
+        game.deckOfCards.drawCards()
         gameNumber += 1
         gameLabel.text = "Game #\(gameNumber)"
         
-        game.newGame()
         
     }
     
@@ -76,7 +69,7 @@ class GameViewController: UIViewController, MatchingGameDelegate {
             if let thisButton = self.view.viewWithTag(cardIndex+1) as? UIButton{
                 
                 thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
-                
+            
             }
         }
         
@@ -84,23 +77,21 @@ class GameViewController: UIViewController, MatchingGameDelegate {
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game.gameDelegate = self // setting gameDelegate to game
+    game.gameDelegate = self // setting gameDelegate to game
         
         gameLabel.morphingEffect = .burn
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
 }
 
