@@ -8,6 +8,7 @@
 
 import UIKit
 import LTMorphingLabel
+import MZTimerLabel
 
 
 
@@ -15,11 +16,12 @@ class GameViewController: UIViewController, MatchingGameDelegate {
     
     var game = Game()
     var gameNumber = 1
-    
-    
+    var stopWatch: MZTimerLabel!
+   
     
     @IBOutlet weak var gameLabel: LTMorphingLabel!
     
+    @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var cardButton: UIButton!
     
@@ -55,7 +57,7 @@ class GameViewController: UIViewController, MatchingGameDelegate {
                     thisButton.setImage(#imageLiteral(resourceName: "AACard"), for: .normal)
                 }, completion: nil)
                 
-                
+                stopWatch.reset()
             }
             
         }
@@ -102,6 +104,12 @@ class GameViewController: UIViewController, MatchingGameDelegate {
         game.gameDelegate = self // setting gameDelegate to game
         
         gameLabel.morphingEffect = .burn
+        
+        stopWatch = MZTimerLabel.init(label: timerLabel)
+        stopWatch.timeFormat = "mm:ss"
+        stopWatch?.start()
+        
+       
         
         // Do any additional setup after loading the view, typically from a nib.
     }

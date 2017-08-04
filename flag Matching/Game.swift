@@ -25,6 +25,13 @@ struct Game {
     var sound = AVAudioPlayer() // add sound player
     var waitingForHidingCards = false //When start game we not waiting
     
+    var unMatchedCards: [Int] = [] // card index numbers that matches
+    
+    init(){
+        
+        newGame()
+        
+    }
     
     mutating func flipCard(atIndexNumber index: Int) -> Bool {
         
@@ -32,6 +39,7 @@ struct Game {
         
         if !unmatchedCardsRevealed.isEmpty && unmatchedCardsRevealed[0] == index {return false} //this is not the first tap ()its the second
         
+        if !unMatchedCards.contains(index) {return false} // Card has already been matched
        
         
         if unmatchedCardsRevealed.count < 2 {
@@ -42,6 +50,16 @@ struct Game {
                 let card2Name = deckOfCards.dealtCards[unmatchedCardsRevealed[1]]
                 
                 if card1Name == card2Name{ // second card is a match
+                    
+                    for (indexCounter, cardIndexValue) in unMatchedCards.enumerated().reversed(){
+                        
+                        
+                        if cardIndexValue == unmatchedCardsRevealed[0] || cardIndexValue == unmatchedCardsRevealed[1]{
+                            
+                            unMatchedCards.remove(at: indexCounter)
+                        }
+                        
+                    }
                     
                     speakCard(number: index)
                     unmatchedCardsRevealed.removeAll()
@@ -73,6 +91,11 @@ struct Game {
         
         deckOfCards.drawCards()
         
+        for  (index, _) in deckOfCards.dealtCards.enumerated() {
+            
+            unMatchedCards.append(index)
+        }
+
     }
     
     mutating func playFlipSound() {
