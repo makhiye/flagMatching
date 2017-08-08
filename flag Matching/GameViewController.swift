@@ -34,6 +34,11 @@ class GameViewController: UIViewController, MatchingGameDelegate {
             let thisImage = UIImage(named: game.deckOfCards.dealtCards[tagNum - 1])
             
             UIView.transition(with: sender, duration: 0.5, options: .transitionCurlDown, animations: {sender.setImage(thisImage, for: .normal)}, completion: nil)
+            if game.unMatchedCards.isEmpty {
+                
+                displayGameOver()
+                
+            }
             
             
             
@@ -64,9 +69,11 @@ class GameViewController: UIViewController, MatchingGameDelegate {
         
         
         gameNumber += 1
-        gameLabel.text = "Game #\(gameNumber)"
+        gameLabel.text = " Game #\(gameNumber) "
         
         game.newGame()
+        stopWatch.reset()
+        stopWatch.start()
         
     }
     
@@ -95,7 +102,12 @@ class GameViewController: UIViewController, MatchingGameDelegate {
     }
     
     
-    
+    func displayGameOver() {
+        
+        gameLabel.text = "GAME OVER!"
+        
+        
+    }
     
     
     override func viewDidLoad() {
@@ -109,7 +121,13 @@ class GameViewController: UIViewController, MatchingGameDelegate {
         stopWatch.timeFormat = "mm:ss"
         stopWatch?.start()
         
-       
+        gameLabel.layer.masksToBounds = true
+        gameLabel.layer.cornerRadius = 5
+        
+        timerLabel.layer.masksToBounds = true
+        timerLabel.layer.cornerRadius = 5
+        
+        gameLabel.text = " Game #\(gameNumber) "
         
         // Do any additional setup after loading the view, typically from a nib.
     }

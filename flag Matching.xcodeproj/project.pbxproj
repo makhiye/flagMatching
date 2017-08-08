@@ -12,6 +12,7 @@
 		3173AB925720AD8D5BF2D7A9 /* Pods_flag_Matching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428EC7DE3C279B6D1DA8F066 /* Pods_flag_Matching.framework */; };
 		9A4A0A2E1F204F59008B78BC /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A0A2D1F204F59008B78BC /* DeckOfCards.swift */; };
 		9A4A0A301F205429008B78BC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A0A2F1F205429008B78BC /* Game.swift */; };
+		9A6061B61F39438F009FEA1D /* gameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A6061B51F39438F009FEA1D /* gameOver.mp3 */; };
 		9A8BC0661F2035D700877A00 /* arrayShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8BC0651F2035D700877A00 /* arrayShuffle.swift */; };
 		9AAA958D1F1D97350057B65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAA958C1F1D97350057B65C /* AppDelegate.swift */; };
 		9AAA958F1F1D97350057B65C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAA958E1F1D97350057B65C /* GameViewController.swift */; };
@@ -29,6 +30,7 @@
 		428EC7DE3C279B6D1DA8F066 /* Pods_flag_Matching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flag_Matching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4A0A2D1F204F59008B78BC /* DeckOfCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
 		9A4A0A2F1F205429008B78BC /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9A6061B51F39438F009FEA1D /* gameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameOver.mp3; sourceTree = "<group>"; };
 		9A8BC0651F2035D700877A00 /* arrayShuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrayShuffle.swift; sourceTree = "<group>"; };
 		9AAA95891F1D97350057B65C /* flag Matching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flag Matching.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAA958C1F1D97350057B65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				9AAA95951F1D97350057B65C /* LaunchScreen.storyboard */,
 				2C605C651F317DD100EDA527 /* card-flip.mp3 */,
 				2C605C671F317DD700EDA527 /* shuffle.wav */,
+				9A6061B51F39438F009FEA1D /* gameOver.mp3 */,
 				9AAA95981F1D97350057B65C /* Info.plist */,
 			);
 			path = "flag Matching";
@@ -204,6 +207,7 @@
 			files = (
 				2C605C681F317DD700EDA527 /* shuffle.wav in Resources */,
 				9AAA95971F1D97350057B65C /* LaunchScreen.storyboard in Resources */,
+				9A6061B61F39438F009FEA1D /* gameOver.mp3 in Resources */,
 				9AAA95941F1D97350057B65C /* Assets.xcassets in Resources */,
 				9AAA95921F1D97350057B65C /* Main.storyboard in Resources */,
 				2C605C661F317DD100EDA527 /* card-flip.mp3 in Resources */,

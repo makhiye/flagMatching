@@ -43,10 +43,15 @@ struct Game {
        
         
         if unmatchedCardsRevealed.count < 2 {
+            
             unmatchedCardsRevealed.append(index)
             
+             playFlipSound()
+            
             if unmatchedCardsRevealed.count == 2 {
+                
                 let card1Name = deckOfCards.dealtCards[unmatchedCardsRevealed[0]]
+                
                 let card2Name = deckOfCards.dealtCards[unmatchedCardsRevealed[1]]
                 
                 if card1Name == card2Name{ // second card is a match
@@ -63,6 +68,11 @@ struct Game {
                     
                     speakCard(number: index)
                     unmatchedCardsRevealed.removeAll()
+                    
+                    if  unMatchedCards.isEmpty {
+                        
+                        playGameOverSound()
+                    }
 
                     
                 }else {                  // second card is NOT a match
@@ -71,8 +81,6 @@ struct Game {
                     resetUnmatchedcards()
                     
                 }
-                
-                playFlipSound()
                 
             }
             
@@ -98,6 +106,11 @@ struct Game {
 
     }
     
+    mutating func playGameOverSound() {
+        let path = Bundle.main.path(forResource: "gameOver", ofType: "mp3")
+        playSound(withPath: path!)
+    }
+    
     mutating func playFlipSound() {
         
         let path = Bundle.main.path(forResource: "card-flip", ofType: "mp3")
@@ -107,6 +120,8 @@ struct Game {
         let path = Bundle.main.path(forResource: "shuffle", ofType: "wav")
         playSound(withPath: path!)
     }
+    
+   
     
     //Plays any sound that you pass a path to
     mutating func playSound(withPath path: String) {
