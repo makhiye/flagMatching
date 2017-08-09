@@ -178,7 +178,7 @@
 					9AAA95881F1D97350057B65C = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = B32EEWPCP7;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -403,8 +403,10 @@
 				INFOPLIST_FILE = "flag Matching/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ishmael.mthombeni.flag-Matching";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.mediaTech.Ishmael.flagsMatching-African-Flags";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b625431e-00df-4674-85fc-92364f3c164e";
+				PROVISIONING_PROFILE_SPECIFIER = "MatchingFlags-Development";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -414,12 +416,15 @@
 			baseConfigurationReference = 29B427428782778DD09B830E /* Pods-flag Matching.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = B32EEWPCP7;
 				INFOPLIST_FILE = "flag Matching/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ishmael.mthombeni.flag-Matching";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.mediaTech.Ishmael.flagsMatching-African-Flags";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2dff16a2-9c1d-42be-b6f3-5107a2e522dc";
+				PROVISIONING_PROFILE_SPECIFIER = "MatchingFlags-Distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
